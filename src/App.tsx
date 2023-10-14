@@ -1,24 +1,21 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import { AppBar, BottomNavigation, BottomNavigationAction } from "@mui/material";
+import { HomeIcon, PresentationChartLineIcon, ChatBubbleBottomCenterTextIcon, MapPinIcon, UserCircleIcon } from "@heroicons/react/24/outline";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      Test
+      <AppBar position="fixed" sx={{ top: "auto", bottom: 0 }}>
+        <BottomNavigation>
+          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
+          <BottomNavigationAction label="presentation" icon={<PresentationChartLineIcon />} />
+          <BottomNavigationAction label="chatbot" icon={<ChatBubbleBottomCenterTextIcon />} />
+          <BottomNavigationAction label="map" icon={<MapPinIcon />} />
+          <BottomNavigationAction label="profile" icon={<UserCircleIcon />} />
+        </BottomNavigation>
+      </AppBar>
     </div>
   );
 }
