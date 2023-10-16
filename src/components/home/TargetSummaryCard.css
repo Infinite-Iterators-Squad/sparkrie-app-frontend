@@ -1,0 +1,20 @@
+.target-summary-card {
+  width: 100%;
+  height: 226px;
+
+  .MuiGrid-container {
+    padding: 12px 24px 12px 24px;
+    /* padding: 24px; */
+  }
+}
+
+.circular-progress-inner-box {
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

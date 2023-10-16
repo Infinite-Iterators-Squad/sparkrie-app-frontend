@@ -1,23 +1,26 @@
 import React from "react";
 import "./App.css";
-import { AppBar, BottomNavigation, BottomNavigationAction } from "@mui/material";
-import { HomeIcon, PresentationChartLineIcon, ChatBubbleBottomCenterTextIcon, MapPinIcon, UserCircleIcon } from "@heroicons/react/24/outline";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
+import { LocalizationProvider } from "@mui/x-date-pickers/LocalizationProvider";
+import { HomePage } from "./components/HomePage";
+import { ChatPage } from "./components/ChatPage";
+import { BottomNavigator } from "./components/custom/BottomNavigator";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      Test
-      <AppBar position="fixed" sx={{ top: "auto", bottom: 0 }}>
-        <BottomNavigation>
-          <BottomNavigationAction label="Home" icon={<HomeIcon />} />
-          <BottomNavigationAction label="presentation" icon={<PresentationChartLineIcon />} />
-          <BottomNavigationAction label="chatbot" icon={<ChatBubbleBottomCenterTextIcon />} />
-          <BottomNavigationAction label="map" icon={<MapPinIcon />} />
-          <BottomNavigationAction label="profile" icon={<UserCircleIcon />} />
-        </BottomNavigation>
-      </AppBar>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+          <BottomNavigator />
+          <Switch>
+            <Route path="/chat" component={ChatPage} />
+            <Route path="/" component={HomePage} />
+          </Switch>
+        </LocalizationProvider>
+      </div>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;

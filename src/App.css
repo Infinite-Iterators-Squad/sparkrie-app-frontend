@@ -36,3 +36,15 @@
     transform: rotate(360deg);
   }
 }
+
+.paper-with-padding {
+  padding: 16px;
+}
+
+.container-with-padding {
+  padding: 16px;
+}
+
+.date-calendar-container {
+  width: 100%;
+}
