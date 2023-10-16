@@ -7,6 +7,7 @@ export const BottomNavigator = () => {
   const location = useLocation();
   const [path, setPath] = React.useState(location.pathname);
   const handleChange = (event: React.SyntheticEvent, value: string) => {
+    console.log(value);
     setPath(value);
   };
 
@@ -14,10 +15,10 @@ export const BottomNavigator = () => {
     <AppBar position="fixed" sx={{ top: "auto", bottom: 0 }}>
       <BottomNavigation value={path} onChange={handleChange} showLabels={false}>
         <BottomNavigationAction label="Home" component={Link} to="/" value="/" icon={<HomeIcon />} />
-        <BottomNavigationAction label="statistics" value="/statistics" icon={<PresentationChartLineIcon />} />
+        <BottomNavigationAction label="statistics" component={Link} to="/statistics" value="/statistics" icon={<PresentationChartLineIcon />} />
         <BottomNavigationAction label="chat" component={Link} to="/chat" value="/chat" icon={<ChatBubbleBottomCenterTextIcon />} />
-        <BottomNavigationAction label="map" value="/map" icon={<MapPinIcon />} />
-        <BottomNavigationAction label="profile" value="/profile" icon={<UserCircleIcon />} />
+        <BottomNavigationAction label="map" component={Link} to="/map" value="/map" icon={<MapPinIcon />} />
+        <BottomNavigationAction label="profile" component={Link} to="/profile" value="/profile" icon={<UserCircleIcon />} />
       </BottomNavigation>
     </AppBar>
   );

@@ -16,7 +16,7 @@ declare module "@mui/joy/styles" {
 
 export const primaryMain = "#5D42BD";
 export const secondaryMain = "#D7BDFD";
-export const backgroundMain = "#F2F4F5";
+export const infoMain = "#F2F4F5";
 export const special = "#fcd965";
 
 export const themeStyle = materialExtendTheme({
@@ -24,12 +24,13 @@ export const themeStyle = materialExtendTheme({
     light: {
       palette: {
         primary: {
-          700: primaryMain,
           main: primaryMain,
         },
         secondary: {
-          700: secondaryMain,
           main: secondaryMain,
+        },
+        info: {
+          main: infoMain,
         },
       },
     },
@@ -74,9 +75,9 @@ export const joyTheme = joyExtendTheme({
     light: {
       palette: {
         secondary: {
-          50: backgroundMain,
-          100: backgroundMain,
-          200: backgroundMain,
+          50: infoMain,
+          100: infoMain,
+          200: infoMain,
           300: secondaryMain,
           400: secondaryMain,
           500: secondaryMain,
@@ -99,7 +100,7 @@ export const joyTheme = joyExtendTheme({
           mainChannel: secondaryMain,
         },
         background: {
-          surface: backgroundMain,
+          surface: infoMain,
         },
       },
     },
